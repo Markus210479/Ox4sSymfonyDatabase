@@ -1,0 +1,16 @@
+{% extends 'navbar.html.twig' %}
+
+{% block title %}{{ parent() }} Bauteildaten{% endblock %}
+
+{% block navbarTitle %}{{ parent() }} Bauteildaten{% endblock %}
+
+{% block neuButtonContent %}neuer Artikel{% endblock %}
+{% block neuFormAddress %}{{ path('app_bauteilformular') }}{% endblock %}
+{% block stautusBox %}<textarea disabled class="form-control" placeholder="Status" id="statusBox"></textarea>    
+{% endblock %}
+
+{% block viewContent %}
+<div class="mt-5">
+Hier stehen Bauteildaten!
+</div>
+{% endblock %}

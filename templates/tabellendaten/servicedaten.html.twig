@@ -1,0 +1,17 @@
+{% extends 'navbar.html.twig' %}
+
+{% block title %}{{ parent() }} Servicedaten{% endblock %}
+
+{% block navbarTitle %}{{ parent() }} Servicedaten{% endblock %}
+
+{% block neuButtonContent %}neuer Service{% endblock %}
+{% block neuFormAddress %}{{ path('app_serviceformular') }}{% endblock %}
+
+{% block stautusBox %}<textarea disabled class="form-control" placeholder="Status" id="statusBox"></textarea>    
+{% endblock %}
+
+{% block viewContent %}
+<div class="mt-5">
+Hier stehen Servicedaten!
+</div>
+{% endblock %}

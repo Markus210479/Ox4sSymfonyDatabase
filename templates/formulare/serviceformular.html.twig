@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Serviceformular{% endblock %}
+
+{% block navbarTitle %}{{ parent() }} Serviceformular{% endblock %}
+
+{% block barContent %}
+<a class="btn btn-outline-light btn-sm ms-1" href="">&lArr; Startseite</a>
+<a class="btn btn-outline-light btn-sm ms-1" href="">Service anlegen</a>
+{% endblock %}
+
+{% block stautusBox %}<textarea disabled class="form-control" placeholder="Status" id="statusBox"></textarea>    
+{% endblock %}
+
+{% block viewContent %}
+<div class="mt-5">
+Hier Service eingeben!
+</div>
+{% endblock %}

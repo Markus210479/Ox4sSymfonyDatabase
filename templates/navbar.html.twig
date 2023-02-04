@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{# <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <span id="navbarbrand" class="navbar-brand" href="#">{% block navbarTitle %}Ox4S{% endblock %}</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> #}
+    {% block barContent %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="btn btn-outline-light btn-sm ms-1" href="">&lArr; Startseite</a>
+        <a class="btn btn-outline-light btn-sm ms-1" href="{% block neuFormAddress %}{% endblock %}">{% block neuButtonContent %}{% endblock %}</a>
+        {# <?php $dropDown = new app\core\controls\Dropdown("Spalten", "dropdown-menu", "colDropDownItems"); ?>
+        <?php echo $dropDown->printDropDown();?>                                                                             #}
+        <form class="d-flex">
+            <button type="button" class="btn btn-outline-light btn-sm ms-3" onclick="firstPage()"><<</button>
+            <button type="button" class="btn btn-outline-light btn-sm ms-1" onclick="pageBackward()"><</button>
+            {# <?php echo new app\core\controls\Select("rowNumberSelect", $rowDropDownArr, "form-select-sm ms-1", "toggleRowsVisibility(this)", $rowDropDownSelect, "50px", "white"); ?>           #}
+            <button type="button" class="btn btn-outline-light btn-sm ms-1" onclick="pageForward()">></button>
+            <button type="button" class="btn btn-outline-light btn-sm ms-1" onclick="lastPage()">>></button>
+        </form>
+        <form class="d-flex" role="search">
+            <button class="btn btn-outline-light btn-sm ms-3" type="button" onclick="resetTextSearch()">X</button>
+            <input id="textSearch" class="form-control-sm ms-1" type="text" placeholder="Search"/>
+            <button class="btn btn-outline-light btn-sm ms-1" type="button" onclick="fullTextSearch()">Suchen</button>
+        </form>
+    </div>
+    
+    {# <textarea disabled class="form-control" placeholder="Status" id="<?=$id_Status;?>"></textarea>     #}
+    {% endblock %}
+    {# </nav> #}
+    {% block viewContent %}{% endblock %}
+
