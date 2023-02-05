@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} Start{% endblock %}
+
+{% block navbarTitle %}{% endblock %}
+
+{% block barContent %}
+<div class="container col-sm-4">
+    <h1 id="startHeader">Ox4S Datenbanksystem</h1>
+</div>
+{% endblock %}
+
+{% block viewContent %}
+<div class="mt-5 container col-sm-4 position-absolute top-50 start-50 translate-middle">
+        <h1 class="border-bottom border-dark border-2">
+            Ox4S Inhalte
+        </h1>
+        <div class="d-grid gap-3">
+            {% for button in buttons %}
+                <a class="btn btn-primary btn-lg" target="_blank" href="{{ path(button.path) }}">{{button.content}}</a>
+            {% endfor %}     
+        </div>
+</div>
+{% endblock %}
