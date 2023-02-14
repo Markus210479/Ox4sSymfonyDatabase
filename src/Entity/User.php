@@ -9,8 +9,8 @@ use Webmozart\Assert\Assert as AssertAssert;
 
 class User
 {
-    public $email;
-    public $password;
+    private $email;
+    private $password;
 
     public function __construct()
     {
@@ -28,16 +28,6 @@ class User
         $this->email = $email;
     }
 
-    // public function getEmailHelp(): string
-    // {
-    //     return $this->emailHelp;
-    // }
-
-    // public function setEmailHelp(string $emailHelp): void
-    // {
-    //     $this->emailHelp = $emailHelp;
-    // }
-
     public function getPassword(): string
     {
         return $this->password;
@@ -47,33 +37,10 @@ class User
     {
         $this->password = $password;
     }
-    // public $name;
-    // public $firstName;
-    // public $email;
-    // public $passWord;
-    // public $status;
 
-    // public function __construct()
-    // {
-    //     $this->name = '';
-    //     $this->firstName = '';
-    //     $this->email = '';
-    //     $this->passWord = '';
-    //     $this->status = '';
-    // }
-
-    // public array $userAttr = [
-    //     'name' => 'Name',
-    //     'firstName' => 'Vorname',
-    //     'email' => 'Email',
-    //     'passWord' => 'Passwort',
-    //     'status' => 'Status'
-    // ];
 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        // $metadata->addPropertyConstraint('email', new NotBlank());
-        // $metadata->addPropertyConstraint('password', new NotBlank());
         $metadata->addPropertyConstraint('email', new Assert\NotBlank([
             'message' => 'Das Feld darf nicht leer sein.'
         ]));

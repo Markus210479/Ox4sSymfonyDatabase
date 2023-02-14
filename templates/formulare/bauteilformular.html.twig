@@ -1,19 +1,78 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}{{ parent() }} Bauteilformular{% endblock %}
 
 {% block navbarTitle %}{{ parent() }} Bauteilformular{% endblock %}
 
 {% block barContent %}
 <a class="btn btn-outline-light btn-sm ms-1" href="">&lArr; Startseite</a>
-<a class="btn btn-outline-light btn-sm ms-1" href="">Artikel anlegen</a>
+<button class="btn btn-outline-light btn-sm ms-1" form="{{formId}}" type="submit" href="">Artikel anlegen</button>
 {% endblock %}
 
 {% block stautusBox %}<textarea disabled class="form-control" placeholder="Status" id="statusBox"></textarea>    
 {% endblock %}
 
 {% block viewContent %}
-<div class="mt-5">
-Hier Artikel eingeben!
+<div class="container-fluid" style="margin-top:70px">
+    {{ form_start(bauteilForm) }}     
+
+        <div class='row'>
+            <div class='col'>
+                {% for field in bauteilForm|slice(0, 11) %}
+                <div class='col'>
+                    <div class='mt-2'>
+                        {{ form_label(field) }}   
+                        {{ form_widget(field) }}                    
+                        {{ form_help(field) }}  
+                        {{ form_errors(field) }}   
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class='col'>
+                {% for field in bauteilForm|slice(11, 11) %}
+                <div class='col'>
+                    <div class='mt-2'>
+                        {{ form_label(field) }}   
+                        {{ form_label(field) }}   
+                        {{ form_widget(field) }}                    
+                        {{ form_help(field) }}  
+                        {{ form_errors(field) }}    
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class='col'>
+                {% for field in bauteilForm|slice(22, 11) %}
+                <div class='col'>
+                    <div class='mt-2'>
+                        {{ form_label(field) }}   
+                        {{ form_widget(field) }}                    
+                        {{ form_help(field) }}  
+                        {{ form_errors(field) }}  
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+             <div class='col'>
+                {% for field in bauteilForm|slice(33, 10) %}
+                <div class='col'>
+                    <div class='mt-2'>
+                        {{ form_label(field) }}   
+                        {{ form_widget(field) }}                    
+                        {{ form_help(field) }}  
+                        {{ form_errors(field) }}  
+                    </div>
+                </div>
+                {% endfor %}
+            </div>           
+        </div>
+    
+
+    {{ form_end(bauteilForm) }}      
 </div>
 {% endblock %}
