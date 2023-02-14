@@ -1,0 +1,19 @@
+@import '~bootstrap';
+
+#statusBox {
+    float: right;
+    /*font-size: 16px;*/
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 60px;
+    width: 300px;
+    word-wrap: break-word;
+    /*font-family: Arial;*/
+    margin-right: 1px;
+    resize: none;
+    background-color: transparent
+}
+#navbarbrand{
+    font-size:26px;
+}

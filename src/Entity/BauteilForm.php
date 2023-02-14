@@ -18,10 +18,10 @@ class BauteilForm extends ColumnNames
             $metadata->addPropertyConstraint("$key", new Assert\NotBlank([
                 'message' => 'Das Feld darf nicht leer sein.'
             ]));
-            $metadata->addPropertyConstraint("$key", new Assert\Length([            
-                'min' => 8,
-                'minMessage' => 'Das Passwort muss mindestes 8 Zeichen lang sein.'
-            ]));
+            // $metadata->addPropertyConstraint("$key", new Assert\Length([            
+            //     'min' => 8,
+            //     'minMessage' => 'Das Passwort muss mindestes 8 Zeichen lang sein.'
+            // ]));
         }      
 
     }

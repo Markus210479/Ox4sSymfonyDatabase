@@ -4,6 +4,8 @@ namespace App\Form\Type;
 use App\Entity\BauteilForm;
 use App\Entity\ColumnNames;
 use App\Entity\Units;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -22,7 +24,7 @@ class BauteilFormType extends AbstractType
         {
             $builder->add("$key", $value['type'] ?? TextType::class, [
                 'label' => $value['name'],
-                'required' => false,
+                'required' => false
             ]);
 
             if(isset($value['choices']))
@@ -32,7 +34,7 @@ class BauteilFormType extends AbstractType
                     'label' => $value['name'],
                     'choices' => [$value['choices']]
                 ]);
-            }
+            }          
                 
         }
     }
